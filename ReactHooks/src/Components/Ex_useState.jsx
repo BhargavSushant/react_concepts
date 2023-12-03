@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import FieldSet from "./FieldSet";
 function Ex_useState() {
   const [count, setCount] = useState(0);
 
   return (
-    <div>
+    <FieldSet legendText="useState hook Example">
       <h1>useState</h1>
       Count : {count}
       <button
@@ -20,7 +21,7 @@ function Ex_useState() {
       >
         Decrement
       </button>
-    </div>
+    </FieldSet>
   );
 }
 
