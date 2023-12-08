@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./Components/Home";
-import Ex_useState from "./Components/Ex_useState";
-import Ex_useEffect from "./Components/Ex_useEffect";
-import Ex_useMemo from "./Components/Ex_useMemo";
-import { Ex_perfOpt_unOptimised } from "./Components/Ex_PerfOpt";
+import Home from "./Components/Concepts/Home";
+import Ex_useState from "./Components/Concepts/Ex_useState";
+import Ex_useEffect from "./Components/Concepts/Ex_useEffect";
+import Ex_useMemo from "./Components/Concepts/Ex_useMemo";
+import { Ex_perfOpt_unOptimised } from "./Components/Concepts/Ex_PerfOpt";
 import "./assets/styles.css";
 function App() {
   return (

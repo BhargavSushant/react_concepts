@@ -8,14 +8,19 @@
 
 */
 import React from "react";
-import FieldSet from "./FieldSet";
+import FieldSet from "../../layout/FieldSet";
 import { Child_Memoized, Child_unMemoized } from "./Child";
-
 function Ex_perfOpt_unOptimised() {
   const [counter, setCounter] = React.useState(0);
   const incrementCounter = () => {
+    /* 
+    * note 1 : example of closure here,  The incrementCounter function "closes over" the counter variable from the outer scope, capturing its value at the time the function is created.
+    ~ note 2 : every time the parent component is getting rerendered the child is getting rerendered as well, apart from that the function setCounter is getting reinstantiated again because The incrementCounter function is recreated every time the component re-renders. This is a common pattern in functional components. React's functional components often create new functions on each render, and this is considered normal behavior. React leverages this behavior to optimize performance. When you define a function within a functional component, it has access to the current state and props. React is aware that this function is a new reference each time the component renders, and it efficiently manages the subscription and unsubscription of event handlers. This behavior is related to how closures work in JavaScript. The incrementCounter function "closes over" the counter variable from the outer scope, capturing its value at the time the function is created. If you want to memoize the function itself to prevent unnecessary re-creation on each render, you can use the useCallback hook. 
+    */
     setCounter(counter + 1);
+    console.log("incrementCounter()=>", incrementCounter);
   };
+  // import { ReactDOM } from "react";
   return (
     <FieldSet legendText="Unoptimized Component # React Memo example">
       <h1>Ex_perfOpt.jsx</h1>
