@@ -1,8 +1,9 @@
 import React from "react";
+import Grid from "@mui/material/Grid";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import "../assets/border.css";
-import FieldSet from "./FieldSet";
+// import "../assets/border.css";
+import FieldSet from "../../layout/FieldSet";
 function Ex_useEffect(props) {
   const [count, setCount] = React.useState(0);
 
@@ -22,8 +23,10 @@ function Ex_useEffect(props) {
 
   return (
     <FieldSet legendText="Ex_useEffect">
+      {/* <Grid> */}
       <h1>useEffect</h1>
-      Count : {count}
+      <row>Count : {count}</row>
+
       <button
         onClick={() => {
           setCount(count + 1);
@@ -38,6 +41,7 @@ function Ex_useEffect(props) {
       >
         Decrement
       </button>
+      {/* </Grid> */}
     </FieldSet>
   );
 }
