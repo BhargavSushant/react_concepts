@@ -8,8 +8,10 @@
 
 */
 import React from "react";
-import FieldSet from "../../layout/FieldSet";
+import Layout from "../../layout/Layout";
 import { Child_Memoized, Child_unMemoized } from "./Child";
+import parse from "html-react-parser";
+
 function Ex_perfOpt_unOptimised() {
   const [counter, setCounter] = React.useState(0);
   const incrementCounter = () => {
@@ -20,9 +22,27 @@ function Ex_perfOpt_unOptimised() {
     setCounter(counter + 1);
     console.log("incrementCounter()=>", incrementCounter);
   };
-  // import { ReactDOM } from "react";
+  const [legendText, componentCode, componentOutput, notes] = [
+    "Unoptimized Component # React Memo example",
+    "",
+    "",
+    parse(
+      "<h4>React Performance Optimization</h4> \
+     In React we can use <strong> React.memo, React.useCallback and React.useMemo </strong> to optimize the performance of our application \
+     In this file we will see how to perform certain optimizations in our application using React.memo, React.useCallback and React.useMemo \
+     <h5>case # 1 </h5> \
+     Code Structure : \
+     <code> Child_unMemoized & Child_Memoized component is imported in Ex_perfOpt </code> \
+     <p> Ex_perfOpt_unOptimised is a simple component which has an increment counter, and you will see that whenever we increment the counter, the Child component is also rendered, even though it does not have any props or state.</p>"
+    ),
+  ];
   return (
-    <FieldSet legendText="Unoptimized Component # React Memo example">
+    <Layout
+      code={componentCode}
+      output={componentOutput}
+      notes={notes}
+      legendText={legendText}
+    >
       <h1>Ex_perfOpt.jsx</h1>
       <h2>
         This is an <u>Unoptimised Component</u>
@@ -37,7 +57,7 @@ function Ex_perfOpt_unOptimised() {
         Child_Memoized is rendered only once
       </p>
       <button onClick={incrementCounter}>Increment Counter</button>
-    </FieldSet>
+    </Layout>
   );
 }
 

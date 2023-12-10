@@ -6,6 +6,7 @@ import Ex_useEffect from "./Components/Concepts/Ex_useEffect";
 import Ex_useMemo from "./Components/Concepts/Ex_useMemo";
 import { Ex_perfOpt_unOptimised } from "./Components/Concepts/Ex_PerfOpt";
 import "./assets/styles.css";
+import Ex_useCallback from "./Components/Concepts/Ex_useCallback";
 function App() {
   return (
     <Router>
@@ -25,6 +26,9 @@ function App() {
           element={<Ex_perfOpt_unOptimised />}
         >
           useMemo
+        </Route>
+        <Route path="/Ex_useCallback" element={<Ex_useCallback />}>
+          use callback example
         </Route>
       </Routes>
     </Router>

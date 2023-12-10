@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
-import FieldSet from "../../layout/FieldSet";
-function Ex_useState() {
+// import FieldSet from "../../layout/FieldSet";
+import Layout from "../../layout/Layout";
+const Ex_useState = () => {
+  const legendText = "Use State Example";
   const [count, setCount] = useState(0);
 
-  return (
-    <FieldSet legendText="useState hook Example">
+  const componentCode = `const [count, setCount] = useState(0)`;
+  const componentOutput = (
+    <>
+      {" "}
       <h1>useState</h1>
       Count : {count}
       <button
@@ -21,9 +25,31 @@ function Ex_useState() {
       >
         Decrement
       </button>
-    </FieldSet>
+    </>
   );
-}
+  const notes = (
+    <div>
+      <p>
+        This example demonstrates the usage of the useState hook to manage
+        state.
+      </p>
+    </div>
+  );
+
+  return (
+    <Layout
+      code={componentCode}
+      output={componentOutput}
+      notes={notes}
+      legendText={legendText}
+    >
+      <div>
+        <h1>useState Example</h1>
+        {/* Additional content specific to this component */}
+      </div>
+    </Layout>
+  );
+};
 
 export default Ex_useState;
 

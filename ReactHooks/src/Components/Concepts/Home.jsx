@@ -13,6 +13,8 @@ function Home() {
       <Link to="/Ex_useMemo">useMemo</Link>
       <br />
       <Link to="/Ex_perfOpt_unOptimised">unoptimised_nomemo</Link>
+      <br />
+      <Link to="/Ex_useCallback">use callback example</Link>
     </div>
   );
 }
